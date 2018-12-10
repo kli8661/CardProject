@@ -35,6 +35,6 @@ public class Card {
 
     public String toString()
     {
-        return this.suit + " of " + pointValue;
+        return "Rank " + this.rank + " " + this.suit + " of " + pointValue;
     }
 }
