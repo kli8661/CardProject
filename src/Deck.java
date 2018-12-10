@@ -23,9 +23,9 @@ public class Deck {
             return false;
     }
 
-    public int size(ArrayList a)
+    public int size(ArrayList unDealt)
     {
-        return a.size();
+        return unDealt.size();
     }
 
     public ArrayList<Card> deal(ArrayList a)
