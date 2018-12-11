@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Deck {
 
@@ -29,8 +31,19 @@ public class Deck {
         return unDealt.size();
     }
 
-    public void deal()
+    public ArrayList<Card> deal()
     {
+        Dealt = new ArrayList<Card>();
+        while(!isEmpty()) {
+            Dealt.add(unDealt.get(0));
+            unDealt.remove(0);
+            shuffle();
+        }
+        return Dealt;
+    }
 
+    public void shuffle()
+    {
+        Collections.shuffle(unDealt);
     }
 }
