@@ -31,15 +31,19 @@ public class Deck {
         return unDealt.size();
     }
 
-    public ArrayList<Card> deal()
+    public Card deal()
     {
         Dealt = new ArrayList<Card>();
-        while(!isEmpty()) {
+        if(isEmpty())
+        {
+            return null;
+        }
+        else
+        {
             Dealt.add(unDealt.get(0));
             unDealt.remove(0);
-            shuffle();
+            return Dealt.get(0);
         }
-        return Dealt;
     }
 
     public void shuffle()
