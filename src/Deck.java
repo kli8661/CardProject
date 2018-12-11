@@ -4,42 +4,33 @@ public class Deck {
 
     private ArrayList<Card> unDealt;
     private ArrayList<Card> Dealt;
+    private int size;
 
     public Deck(String[] rank, String[] suits, int[] values)
     {
-        for(int i = 0; i <= 52; i++)
+        unDealt = new ArrayList<Card>();
+        for(int i = 0; i < suits.length; i++)
         {
-            unDealt.add(i, Card(rank[i], suits[i], values[i]));
+            for(int j = 0; j < rank.length; j++)
+            {
+                unDealt.add(new Card(rank[j], suits[i], values[j]));
+            }
         }
+        size = unDealt.size();
     }
 
-    public boolean isEmpty(ArrayList a)
+    public boolean isEmpty()
     {
-        if(a.size() == 0)
-        {
-            return true;
-        }
-        else
-            return false;
+        return size == 0;
     }
 
-    public int size(ArrayList unDealt)
+    public int size()
     {
         return unDealt.size();
     }
 
-    public ArrayList<Card> deal(ArrayList a)
+    public void deal()
     {
-        if (a.size() > 0)
-        {
-            a.get(0);
-            Dealt.add(a.get(0));
 
-        }
-        else
-        {
-            return null;
-        }
-        return a;
     }
 }
